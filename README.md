@@ -53,3 +53,8 @@ service mysql restart
 ```make
 mysql -u root  -p
 ```
+
+# How to check Character Set on MYSQL ?
+```make
+status
+```
