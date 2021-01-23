@@ -58,3 +58,19 @@ mysql -u root  -p
 ```make
 status
 ```
+
+# How to make MYSQL user ?
+```make
+create user 'bitweb'@localhost identified by 'dkdlxl123';
+```
+
+# How to give Privileges ?
+```make
+grant all privileges on *.* to 'bitweb'@localhost;
+```
+
+# How to make Schema ?
+```make
+create database jpa_test;
+```
+
