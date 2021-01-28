@@ -19,7 +19,7 @@ public class EmployeeRepository {
             "select id, name, start_date, title, dept_name, salary " +
                     "from s_emp order by name";
 
-    public void insertEmployee(Employee repo) {
+    public void insertEmployee(Employee entity) {
         System.out.println("JDBC Based Registration");
 
         try {
@@ -28,11 +28,11 @@ public class EmployeeRepository {
             System.out.println("Connection Success!");
 
             stmt = conn.prepareStatement(INSERT_EMP);
-            stmt.setString(1, repo.getName());
-            stmt.setTimestamp(2, repo.getStartDate());
-            stmt.setString(3, repo.getTitle());
-            stmt.setString(4, repo.getDeptName());
-            stmt.setDouble(5, repo.getSalary());
+            stmt.setString(1, entity.getName());
+            stmt.setTimestamp(2, entity.getStartDate());
+            stmt.setString(3, entity.getTitle());
+            stmt.setString(4, entity.getDeptName());
+            stmt.setDouble(5, entity.getSalary());
             stmt.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
