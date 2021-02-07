@@ -1,6 +1,16 @@
 # JPAExamples
 JPA Examples
 
+# Check Contents  
+```
+1. demo
+2. lombok
+3. mybatis
+4. hibernate
+5. jpa_basics
+6. 
+```
+
 # How to remove MYSQL
 ```make
 sudo apt-get remove --purge mysql*
