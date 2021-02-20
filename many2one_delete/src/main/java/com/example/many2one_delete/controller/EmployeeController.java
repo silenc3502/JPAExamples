@@ -1,7 +1,7 @@
-package com.example.many2one_update.controller;
+package com.example.many2one_delete.controller;
 
-import com.example.many2one_update.entity.Employee;
-import com.example.many2one_update.service.EmployeeService;
+import com.example.many2one_delete.entity.Employee;
+import com.example.many2one_delete.service.EmployeeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +39,15 @@ public class EmployeeController {
         log.info("getUpdate()");
 
         service.getUpdateTest();
+
+        return "employee/success.html";
+    }
+
+    @GetMapping("/getDelete")
+    public String getDelete(Employee emp, Model model) throws Exception {
+        log.info("getDelete()");
+
+        service.getDeleteTest();
 
         return "employee/success.html";
     }

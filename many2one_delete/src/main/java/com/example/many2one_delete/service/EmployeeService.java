@@ -1,8 +1,8 @@
-package com.example.many2one_update.service;
+package com.example.many2one_delete.service;
 
-import com.example.many2one_update.entity.Department;
-import com.example.many2one_update.entity.Employee;
-import com.example.many2one_update.repository.EmployeeRepository;
+import com.example.many2one_delete.entity.Department;
+import com.example.many2one_delete.entity.Employee;
+import com.example.many2one_delete.repository.EmployeeRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -38,6 +38,11 @@ public class EmployeeService {
 
         EmployeeRepository empRepo = new EmployeeRepository();
         empRepo.updateEmployee(depart, 1L);
+    }
+
+    public void getDeleteTest() {
+        EmployeeRepository empRepo = new EmployeeRepository();
+        empRepo.deleteDepart(2L, 1L);
     }
 
     public void getFindTest(Long num) {

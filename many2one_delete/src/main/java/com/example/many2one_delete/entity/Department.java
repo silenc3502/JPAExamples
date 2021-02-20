@@ -1,4 +1,4 @@
-package com.example.many2one_update.entity;
+package com.example.many2one_delete.entity;
 
 import lombok.Data;
 

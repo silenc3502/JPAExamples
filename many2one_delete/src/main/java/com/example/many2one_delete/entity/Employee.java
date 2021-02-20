@@ -1,4 +1,4 @@
-package com.example.many2one_update.entity;
+package com.example.many2one_delete.entity;
 
 import lombok.Data;
 
@@ -20,7 +20,7 @@ public class Employee {
     // @ManyToOne(targetEntity = com.example.many2one2.entity.Department.class)
     // Null을 허용하지 않으므로 inner join 형태로 갈 수 있으며
     // FetchType.LAZY를 통해 리눅스 커널의 Lazy Buddy와 같이 필요한 시점까지 데이터를 준비하지 않는다.
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "dept_id")
     private Department dept;
 }

@@ -1,7 +1,7 @@
-package com.example.many2one_update.repository;
+package com.example.many2one_delete.repository;
 
-import com.example.many2one_update.entity.Department;
-import com.example.many2one_update.entity.Employee;
+import com.example.many2one_delete.entity.Department;
+import com.example.many2one_delete.entity.Employee;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -15,7 +15,7 @@ public class EmployeeRepository {
     private EntityTransaction et;
 
     public EmployeeRepository() {
-        emf = Persistence.createEntityManagerFactory("many2one_update");
+        emf = Persistence.createEntityManagerFactory("many2one_delete");
         em = emf.createEntityManager();
         et = em.getTransaction();
     }
@@ -62,6 +62,27 @@ public class EmployeeRepository {
 
             emp = em.find(Employee.class, num);
             emp.setDept(depart);
+
+            et.commit();
+        } catch (Exception e) {
+            et.rollback();
+        }
+    }
+
+    public void deleteDepart(Long empNum, Long departNum) {
+        System.out.println("JPA Based Delete");
+
+        // System.out.println(entity);
+        Employee emp;
+
+        try {
+            et.begin();
+
+            emp = em.find(Employee.class, empNum);
+            emp.setDept(null);
+
+            Department depart = em.find(Department.class, departNum);
+            em.remove(depart);
 
             et.commit();
         } catch (Exception e) {
