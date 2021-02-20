@@ -8,7 +8,11 @@ JPA Examples
 3. mybatis
 4. hibernate
 5. jpa_basics
-6. 
+6. jps_basics2
+7. jpa_basics3
+8. many2one
+9. many2one2
+10. 
 ```
 
 # How to remove MYSQL
