@@ -15,7 +15,10 @@ JPA Examples
 10. many2one_update
 11. many2one_delete
 12. one2many
-13. 
+13. one2many_cascade
+14. one2one
+15. many2many
+16. 
 ```
 
 # How to remove MYSQL
