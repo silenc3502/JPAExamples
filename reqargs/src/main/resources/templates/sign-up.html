@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>가즈아에 오신 것을 환영합니다</title>
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="/css/bootstrap-reboot.css">
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/bootstrap.bundle.js"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+</head>
+<body>
+<header>
+    <nav th:replace="fragments/navbar :: navbar"/>
+</header>
+<main>
+    <div class="container-lg">
+        <form action="/sign-up" method="post" role="form" th:object="${signUpForm}" style="margin-top: 2rem">
+            <div class="mb-3 row">
+                <label for="email" class="col-sm-2 col-form-label">이메일</label>
+                <div class="col-sm-10">
+                    <input th:field="*{email}" type="email" class="form-control" id="email"
+                           placeholder="taker@dahada.com">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="password" class="col-sm-2 col-form-label">비밀번호</label>
+                <div class="col-sm-10">
+                    <input th:field="*{password}" type="password" class="form-control" id="password">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">가입하기</button>
+        </form>
+    </div>
+</main>
+<footer>
+</footer>
+<script>
+</script>
+</body>
+</html>
